@@ -29,7 +29,7 @@ FUNKCJE WTYCZKI:
      Podany wynik wyrażony jest w metrach, z centymetrową dokładnością.
      
      
-  2. Liczenie pola powierzchni pomiędzy trzema punktami:
+  2. Liczenie pola powierzchni pomiędzy zaznaczonymi punktami:
   
      Do obliczenia pola powierzchni między punktami należy z jednej warstwy wybrać trzy punkty. Następnie na podstawie współrzędych tych 
      punktów, które w tabeli atrybutów w programie QGIS znajdują się w kolumnach o nazwach 'x2000' oraz 'y2000', program policzy pole 
