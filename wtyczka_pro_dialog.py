@@ -74,17 +74,49 @@ class wtyczka_projektDialog(QtWidgets.QDialog, FORM_CLASS):
             
             przewyzszenie = round(H2 - H1, 3)
             
-            self.label_wys.setText(str(przewyzszenie))
+            self.label_wys.setText(str(przewyzszenie) +'m')
             
             
         QgsMessageLog.logMessage('Różnica wysokości między wybranymi punktami wynosi:' +str(przewyzszenie) +'m', level = Qgis.Success)
         
-        iface.messageBar().pushMessage("Różnica wysokosci", 'Różnica wysokości między wybranymi punktami wynosi:' +str(przewyzszenie), level = Qgis.Success)
+        iface.messageBar().pushMessage("Różnica wysokosci", 'Różnica wysokości między wybranymi punktami została policzona', level = Qgis.Success)
         
         
         
         
         
-    #def licz_pole(self):
+    def licz_pole(self):
+    
+        obiekty = self.layer.currentLayer().selectedFeatures()
+        punkty = []
+        for o in obiekty:
+            x = float(o.attribute('x2000'))
+            y = float(o.attribute('y2000'))
+            p = QgsPointXY(x, y)
+            punkty.append(p)
+            
+        if len(obiekty)<3:
+            iface.messageBar().pushMessage("Pole powierzchni", 'Aby policzyć pole powierzchni wybierz co najmniej TRZY PUNKTY', level = Qgis.Warning)
+            return
+            
+        if len(obiekty)>2:
+
+            pole = 0
+            dl = len(punkty)
+            for e in range(dl):
+                a = (e + 1) % dl
+                pole += (punkty[a].x() + punkty[e].x()) * (punkty[a].y() - punkty[e].y())
+
+            pole /= 2
+            pole = round(abs(pole/10000), 3)
+            
+            pole = self.label_pole.setText(str(pole) +'ha')
+
+            QgsMessageLog.logMessage('Pole powierzchni między wybranymi punktami wynosi: {pole} ha', level = Qgis.Success)
         
+            iface.messageBar().pushMessage("Pole powierzchni", 'Pole powierzchni zostało policzone', level = Qgis.Success)
+            
+            
+        
+
         
