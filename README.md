@@ -1,5 +1,16 @@
 # Projekt nr 2 - wtyczka do QGIS
 
+WYMAGANIA SYSTEMOWE:
+  - system Windows 10 lub 11
+  - program QGIS (w wersji minimum 3.22)
+  - python 3.9
+  - biblioteka qgis.PyQt
+  - biblioteka qgis.core
+  - biblioteka qgis.utils
+  - biblioteka numpy
+  - biblioteka os
+ 
+
 
 FUNKCJE WTYCZKI:
 
@@ -18,7 +29,6 @@ FUNKCJE WTYCZKI:
      Podany wynik wyrażony jest w metrach, z centymetrową dokładnością.
      
      
-
   2. Liczenie pola powierzchni pomiędzy trzema punktami:
   
      Do obliczenia pola powierzchni między punktami należy z jednej warstwy wybrać trzy punkty. Następnie na podstawie współrzędych tych 
@@ -28,6 +38,24 @@ FUNKCJE WTYCZKI:
      Aby wtyczka poprawnie obliczyła pole powierzchni między punktami, powinny się one znajdować na warstwie, która w swojej tabeli
      atrybutów posiada kolumny ze współrzędnymi w układzie PL2000 o nazwach 'x2000' oraz 'y2000'.
      
-     Podany wynik wyrażany jest w metrach kwadratowych, z dokładnością do czwartego miejsca po przecinku.
+     Podany wynik wyrażany jest w hektarach, z dokładnością do trzeciego miejsca po przecinku.
      
      
+     
+SPOSÓB UŻYCIA WTYCZKI:
+  1. Na samym początku należy pobrać wtyczkę i umieścić ją programie QGIS
+  2. Następnie wczytać trzeba mapę zawierającą potrzebne, wymienione wyżej artybuty i uruchomić warstwę o nazwie 'Osnowa wysokościowa'
+  3. Po wczytaniu mapy należy zaznaczyć na mapie odpowiednią liczbę punktów narzędziem o nazwie 'Zaznacz obiekty prostokątem lub 
+     kliknięciem'
+  5. Następnie w okienku wtyczki wybrać trzeba odpowiednią warstwę ('Osnowa wysokościowa')
+  6. Po kliknięciu 'Policz' obok wybranej funkcji obok przycisku powinien pojawić się wynik. Jeśli użytkownik nie wybierze wymaganej
+     do wykonania wybranej operacji liczby punktów program wyświetli komunikat o powstałym błędzie.
+     
+     
+     
+PRZYKŁADOWE PLIKI, NA KTÓRYCH MOŻNA UŻYĆ WTYCZKI:
+  - https://mtorun-wms.webewid.pl/iip/ows
+
+
+
+
