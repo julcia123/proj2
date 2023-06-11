@@ -53,7 +53,7 @@ SPOSÓB UŻYCIA WTYCZKI:
      
      
      
-PRZYKŁADOWE PLIKI, NA KTÓRYCH MOŻNA UŻYĆ WTYCZKI:
+PRZYKŁADOWE PLIKI, NA KTÓRYCH MOŻNA UŻYĆ WTYCZKI (łącze WFS dostępne na stronie geoportal.gov.pl):
   - https://mtorun-wms.webewid.pl/iip/ows
 
 
