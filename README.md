@@ -32,8 +32,7 @@ FUNKCJE WTYCZKI:
   2. Liczenie pola powierzchni pomiędzy zaznaczonymi punktami:
   
      Do obliczenia pola powierzchni między punktami należy z jednej warstwy wybrać przynajmniej trzy punkty. Następnie na podstawie współrzędych tych 
-     punktów, które w tabeli atrybutów w programie QGIS znajdują się w kolumnach o nazwach 'x2000' oraz 'y2000', program policzy pole 
-     powierzchni zawarte między nimi - przy użyciu metody Gaussa. 
+     punktów, program policzy pole powierzchni zawarte między nimi - przy użyciu metody Gaussa. 
      
      Aby wtyczka poprawnie obliczyła pole powierzchni między punktami, powinny się one znajdować na warstwie, która w swojej tabeli
      atrybutów posiada kolumny ze współrzędnymi w układzie PL2000 o nazwach 'x2000' oraz 'y2000'.
@@ -43,7 +42,7 @@ FUNKCJE WTYCZKI:
      
      
 SPOSÓB UŻYCIA WTYCZKI:
-  1. Na samym początku należy pobrać wtyczkę i umieścić ją programie QGIS
+  1. Na samym początku należy pobrać wtyczkę i umieścić ją w folderze z wtyczkami (prawdopodobna ścieżka z wtyczkami Twojego urządzenia:                          "C:\Users\XXX\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins" ---- NALEŻY ZMIENIĆ "XXX" NA TWOJĄ NAZWĘ UŻYTKOWNIKA)                              a następnie załadować wtyczkę w programie QGIS.
   2. Następnie wczytać trzeba mapę zawierającą potrzebne, wymienione wyżej artybuty i uruchomić warstwę o nazwie 'Osnowa wysokościowa'
   3. Po wczytaniu mapy należy zaznaczyć na mapie odpowiednią liczbę punktów narzędziem o nazwie 'Zaznacz obiekty prostokątem lub 
      kliknięciem'
