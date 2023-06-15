@@ -90,8 +90,8 @@ class wtyczka_projektDialog(QtWidgets.QDialog, FORM_CLASS):
         obiekty = self.layer.currentLayer().selectedFeatures()
         punkty = []
         for o in obiekty:
-            x = float(o.attribute('x2000'))
-            y = float(o.attribute('y2000'))
+            x = float(o.geometry().asPoint().x())
+            y = float(o.geometry().asPoint().y())
             p = QgsPointXY(x, y)
             punkty.append(p)
             
